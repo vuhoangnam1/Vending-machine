@@ -1,0 +1,15 @@
+vsim -voptargs="+acc=2" work.test_tb
+add wave  \
+sim:/test_tb/clk \
+sim:/test_tb/rst \
+sim:/test_tb/coin \
+sim:/test_tb/value_coin \
+sim:/test_tb/id_item \
+sim:/test_tb/product \
+sim:/test_tb/slot \
+sim:/test_tb/coin_change \
+sim:/test_tb/error_o \
+sim:/test_tb/done \
+sim:/test_tb/current_state_o \
+sim:/test_tb/next_state_o \
+run -all
