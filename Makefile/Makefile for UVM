@@ -1,1 +1,19 @@
-
+vsim -voptargs="+acc=2" work.vending_machine_tb
+add wave  \
+sim:/vending_machine_tb/vm_if/clk \
+sim:/vending_machine_tb/vm_if/rst \
+sim:/vending_machine_tb/vm_if/coin \
+sim:/vending_machine_tb/vm_if/value_coin \
+sim:/vending_machine_tb/vm_if/id_item \
+sim:/vending_machine_tb/vm_if/product \
+sim:/vending_machine_tb/vm_if/slot \
+sim:/vending_machine_tb/vm_if/coin_change \
+sim:/vending_machine_tb/vm_if/error_o \
+sim:/vending_machine_tb/vm_if/done \
+sim:/vending_machine_tb/vm_if/current_state_o \
+sim:/vending_machine_tb/vm_if/next_state_o \
+vsim -coverage -gui work.vending_machine_tb
+run -all
+coverage report -summary
+coverage report -codeAll -details
+coverage report -cvg -verbose
